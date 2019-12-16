@@ -31,8 +31,8 @@ from rl_coach.base_parameters import Frameworks, VisualizationParameters, TaskPa
     RunType, DistributedCoachSynchronizationType
 from rl_coach.core_types import TotalStepsCounter, RunPhase, PlayingStepsType, TrainingSteps, EnvironmentEpisodes, \
     EnvironmentSteps, StepMethod, Transition
-from multiprocessing import Process
-from multiprocessing.managers import BaseManager
+from billiard import Process
+from billiard.managers import BaseManager
 import subprocess
 from glob import glob
 

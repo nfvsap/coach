@@ -16,7 +16,7 @@
 
 
 import os
-from multiprocessing import Process, Manager
+from billiard import Process, Manager
 from os.path import basename
 
 import pandas as pd

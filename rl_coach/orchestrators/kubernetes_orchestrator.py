@@ -23,7 +23,7 @@ import sys
 from enum import Enum
 from typing import List
 from configparser import ConfigParser, Error
-from multiprocessing import Process
+from billiard import Process
 
 from rl_coach.base_parameters import RunType
 from rl_coach.orchestrators.deploy import Deploy, DeployParameters

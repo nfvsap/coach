@@ -19,7 +19,7 @@ import glob
 import os
 import shutil
 import subprocess
-import multiprocessing
+import billiard
 import sys
 import signal
 import pandas as pd
@@ -223,7 +223,7 @@ def main():
                         action='store_true')
     parser.add_argument('-mt', '--max_threads',
                         help="(int) maximum number of threads to run in parallel",
-                        default=multiprocessing.cpu_count()-2,
+                        default=billiard.cpu_count()-2,
                         type=int)
     parser.add_argument(
         '-i', '--image', help="(string) Name of the testing image", type=str, default=None

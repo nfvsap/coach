@@ -24,7 +24,7 @@ import sys
 import threading
 import time
 import traceback
-from multiprocessing import Manager
+from billiard import Manager
 from subprocess import Popen
 from typing import List, Tuple, Union
 

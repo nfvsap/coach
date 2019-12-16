@@ -6,7 +6,7 @@ import tensorflow as tf
 from rl_coach.base_parameters import TaskParameters, DistributedTaskParameters, Frameworks
 from rl_coach.core_types import EnvironmentSteps
 from rl_coach.utils import get_open_port
-from multiprocessing import Process
+from billiard import Process
 from tensorflow import logging
 import pytest
 logging.set_verbosity(logging.INFO)

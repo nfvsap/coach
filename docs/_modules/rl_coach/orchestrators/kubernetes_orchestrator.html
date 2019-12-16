@@ -206,7 +206,7 @@
 <span class="kn">from</span> <span class="nn">enum</span> <span class="k">import</span> <span class="n">Enum</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span>
 <span class="kn">from</span> <span class="nn">configparser</span> <span class="k">import</span> <span class="n">ConfigParser</span><span class="p">,</span> <span class="n">Error</span>
-<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="k">import</span> <span class="n">Process</span>
+<span class="kn">from</span> <span class="nn">billiard</span> <span class="k">import</span> <span class="n">Process</span>
 
 <span class="kn">from</span> <span class="nn">rl_coach.base_parameters</span> <span class="k">import</span> <span class="n">RunType</span>
 <span class="kn">from</span> <span class="nn">rl_coach.orchestrators.deploy</span> <span class="k">import</span> <span class="n">Deploy</span><span class="p">,</span> <span class="n">DeployParameters</span>
