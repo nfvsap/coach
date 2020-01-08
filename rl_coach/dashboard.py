@@ -24,6 +24,8 @@ sys.path.append('.')
 
 import os
 
+DASHBOARD_PORT = os.environ.get('NFVACC_SLAM_DASHBOARD_PORT')
+
 from rl_coach.dashboard_components.experiment_board import display_directory_group, display_files
 from rl_coach.dashboard_components.globals import doc
 import rl_coach.dashboard_components.boards
@@ -64,7 +66,7 @@ def main():
     from rl_coach.utils import get_open_port
 
     dashboard_path = os.path.realpath(__file__)
-    port = get_open_port()
+    port = DASHBOARD_PORT
     command = 'bokeh serve --show {path} --port {port}'.format(path=dashboard_path, port=port)
 
     if args.allow_remote_connection:
