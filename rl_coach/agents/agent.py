@@ -516,6 +516,7 @@ class Agent(AgentInterface):
         # log all the signals to file
         current_time = self.get_current_time()
         self.agent_logger.set_current_time(current_time)
+        self.agent_logger.create_signal_value('Timestamp', current_time)
         self.agent_logger.create_signal_value('Training Iter', self.training_iteration)
         self.agent_logger.create_signal_value('Episode #', self.current_episode)
         self.agent_logger.create_signal_value('Epoch', self.training_epoch)
