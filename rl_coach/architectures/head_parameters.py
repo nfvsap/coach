@@ -145,7 +145,9 @@ class DuelingQHeadCustomParameters(HeadParameters):
         super().__init__(parameterized_class_name="DuelingQHeadCustom", activation_function=activation_function, name=name,
                          dense_layer=dense_layer, num_output_head_copies=num_output_head_copies,
                          rescale_gradient_from_head_by_factor=rescale_gradient_from_head_by_factor,
-                         loss_weight=loss_weight, number_layers=number_layers, units=units)
+                         loss_weight=loss_weight)
+        self.number_layers = number_layers
+        self.units = units
 
 class MeasurementsPredictionHeadParameters(HeadParameters):
     def __init__(self, activation_function: str ='relu', name: str='measurements_prediction_head_params',
