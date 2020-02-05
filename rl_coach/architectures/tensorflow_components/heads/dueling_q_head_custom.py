@@ -20,9 +20,9 @@ class DuelingQHeadCustom(QHead):
     def build_module(self, input_layer):
         # state value tower - V
         with tf.variable_scope("state_value"):
-            self.state_value = self.dense_layer(self.units)(input_layer, activation=self.activation_function, name='fc1') _
+            self.state_value = self.dense_layer(self.units)(input_layer, activation=self.activation_function, name='fc1')
             for i in range(1,self.number_layers):
-                self.state_value = self.dense_layer(self.units)(input_layer, activation=self.activation_function,
+                self.state_value = self.dense_layer(self.units)(self.state_value, activation=self.activation_function,
                                                             name='fc1_{}'.format(str(i)))
             self.state_value = self.dense_layer(1)(self.state_value, name='fc2')
 
@@ -30,7 +30,7 @@ class DuelingQHeadCustom(QHead):
         with tf.variable_scope("action_advantage"):
             self.action_advantage = self.dense_layer(self.units)(input_layer, activation=self.activation_function, name='fc1')
             for i in range(1,self.number_layers):
-                self.action_advantage = self.dense_layer(self.units)(input_layer, activation=self.activation_function, name='fc1_{}'.format(str(i)))
+                self.action_advantage = self.dense_layer(self.units)(self.action_advantage, activation=self.activation_function, name='fc1_{}'.format(str(i)))
             self.action_advantage = self.dense_layer(self.num_actions)(self.action_advantage, name='fc2')
             self.action_mean = tf.reduce_mean(self.action_advantage, axis=1, keepdims=True)
             self.action_advantage = self.action_advantage - self.action_mean
