@@ -13,11 +13,11 @@ class DuelingQHeadCustom(QHead):
                  dense_layer=Dense, number_layers: int = 1, units: int = 1):
         super().__init__(agent_parameters, spaces, network_name, head_idx, loss_weight, is_local, activation_function,
                          dense_layer=dense_layer)
-        self.name = 'dueling_q_values_head_custom'
+        self.name = 'dueling_q_head_custom'
         self.number_layers = number_layers
         self.units = units
 
-    defbuild_module(self, input_layer):
+    def build_module(self, input_layer):
         # state value tower - V
         with tf.variable_scope("state_value"):
             self.state_value = self.dense_layer(self.units)(input_layer, activation=self.activation_function, name='fc1') _
