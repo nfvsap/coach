@@ -3,6 +3,7 @@ from .categorical_q_head import CategoricalQHead
 from .ddpg_actor_head import DDPGActor
 from .dnd_q_head import DNDQHead
 from .dueling_q_head import DuelingQHead
+from .dueling_q_head_custom import DuelingQHeadCustom
 from .measurements_prediction_head import MeasurementsPredictionHead
 from .naf_head import NAFHead
 from .policy_head import PolicyHead
@@ -25,6 +26,7 @@ __all__ = [
     'DDPGActor',
     'DNDQHead',
     'DuelingQHead',
+    'DuelingQHeadCustom',
     'MeasurementsPredictionHead',
     'NAFHead',
     'PolicyHead',
